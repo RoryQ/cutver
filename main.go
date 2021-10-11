@@ -72,7 +72,6 @@ func initialModel(branch string, tagCommand chan string) model {
 	for i := range m.inputs {
 		t = textinput.NewModel()
 		t.CursorStyle = cursorStyle
-		t.CharLimit = 32
 
 		switch i {
 		case 0:
@@ -84,6 +83,7 @@ func initialModel(branch string, tagCommand chan string) model {
 			t.TextStyle = focusedStyle
 		case 1:
 			t.Placeholder = "branch"
+			t.CharLimit = 200
 			t.SetValue(branch)
 		}
 
